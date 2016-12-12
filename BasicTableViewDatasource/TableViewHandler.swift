@@ -21,13 +21,13 @@ protocol TableViewCellDecorator {
     static func update(tableViewCell cell: CellType, withData data: DataType)
 }
 
-class TableViewHandler<T: TableViewCellDecorator>: NSObject, UITableViewDataSource {
+class TableViewHandler<Decorator: TableViewCellDecorator>: NSObject, UITableViewDataSource {
     
-    fileprivate(set) var dataSet: [T.DataType]
+    fileprivate(set) var dataSet: [Decorator.DataType]
     private(set) weak var tableView: UITableView!
     let reuseIdentifiers: (IndexPath) -> String
     
-    init(withTableView tableView: UITableView, dataSet: [T.DataType], reuseIdentifiers: @escaping (IndexPath) -> String) {
+    init(withTableView tableView: UITableView, dataSet: [Decorator.DataType], reuseIdentifiers: @escaping (IndexPath) -> String) {
         self.tableView = tableView
         self.dataSet = dataSet
         self.reuseIdentifiers = reuseIdentifiers
@@ -35,12 +35,12 @@ class TableViewHandler<T: TableViewCellDecorator>: NSObject, UITableViewDataSour
         self.tableView.dataSource = self
     }
     
-    func reloadWithData(data: [T.DataType]) {
+    func reloadWithData(data: [Decorator.DataType]) {
         dataSet = data
         tableView.reloadData()
     }
     
-    func addData(data: [T.DataType], animated: Bool = true) {
+    func addData(data: [Decorator.DataType], animated: Bool = true) {
         let startIndex = dataSet.count
         var indicesToAdd: [IndexPath] = []
         dataSet.append(contentsOf: data)
@@ -61,19 +61,19 @@ class TableViewHandler<T: TableViewCellDecorator>: NSObject, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifiers(indexPath), for: indexPath) as? T.CellType else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifiers(indexPath), for: indexPath) as? Decorator.CellType else {
            return tableView.dequeueReusableCell(withIdentifier: reuseIdentifiers(indexPath), for: indexPath)
         }
-        T.update(tableViewCell: cell, withData: dataSet[indexPath.row])
+        Decorator.update(tableViewCell: cell, withData: dataSet[indexPath.row])
         return cell
     }
     
 }
 
 
-extension TableViewHandler where T.DataType: Equatable {
+extension TableViewHandler where Decorator.DataType: Equatable {
     
-    func removeData(data: [T.DataType], animated: Bool = true) {
+    func removeData(data: [Decorator.DataType], animated: Bool = true) {
         var indicesToRemove: [IndexPath] = []
         let proxyDataSet = dataSet
         for index in 0..<data.count {
@@ -95,9 +95,9 @@ extension TableViewHandler where T.DataType: Equatable {
     
 }
 
-extension TableViewHandler where T.DataType: Updatable {
+extension TableViewHandler where Decorator.DataType: Updatable {
    
-    func addData(data: [T.DataType], updateExisting: Bool, animated: Bool = true) {
+    func addData(data: [Decorator.DataType], updateExisting: Bool, animated: Bool = true) {
         var indicesToAdd: [IndexPath] = []
         var indicesToUpdate: [IndexPath] = []
         for index in 0..<data.count {
