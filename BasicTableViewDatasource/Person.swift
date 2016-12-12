@@ -7,3 +7,26 @@
 //
 
 import Foundation
+
+struct Person {
+    let firstName: String
+    let lastName: String
+    var age: Int
+    var isVIP: Bool
+}
+
+extension Person: TableViewCellDataRepresentable {
+    
+}
+
+extension Person: Updatable {
+    
+    mutating func update(fromCopy copy: Person) {
+        age = copy.age
+        isVIP = copy.isVIP
+    }
+    
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        return (lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName)
+    }
+}

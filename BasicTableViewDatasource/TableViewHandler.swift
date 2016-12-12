@@ -1,5 +1,5 @@
 //
-//  SimpleTableViewDatasource.swift
+//  TableViewHandler.swift
 //  BasicTableViewDatasource
 //
 //  Created by Vishal Singh on 12/11/16.
@@ -9,9 +9,7 @@
 import UIKit
 
 
-protocol TableViewCellDataRepresentable {
-    
-}
+protocol TableViewCellDataRepresentable {}
 
 protocol Updatable: Equatable {
     mutating func update(fromCopy copy: Self)
@@ -77,12 +75,13 @@ extension TableViewHandler where T.DataType: Equatable {
     
     func removeData(data: [T.DataType], animated: Bool = true) {
         var indicesToRemove: [IndexPath] = []
+        let proxyDataSet = dataSet
         for index in 0..<data.count {
-            let indexToRemove = dataSet.index() { return $0 == data[index] }
-            guard let _indexToRemove = indexToRemove else {
-                continue
+            guard let _indexToRemove = proxyDataSet.index(where: { return $0 == data[index] }),
+                let currentIndex = dataSet.index(where: { return $0 == data[index] })else {
+                    continue
             }
-            dataSet.remove(at: _indexToRemove)
+            dataSet.remove(at: currentIndex)
             indicesToRemove.append(IndexPath(row: _indexToRemove, section: 0))
         }
         if animated {
@@ -122,5 +121,6 @@ extension TableViewHandler where T.DataType: Updatable {
             tableView.reloadData()
         }
     }
+    
 }
 

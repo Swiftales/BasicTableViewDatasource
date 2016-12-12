@@ -12,6 +12,13 @@
 		DC6B4A621DFD1B8E008E3DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6B4A601DFD1B8E008E3DE1 /* Main.storyboard */; };
 		DC6B4A641DFD1B8E008E3DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6B4A631DFD1B8E008E3DE1 /* Assets.xcassets */; };
 		DC6B4A671DFD1B8E008E3DE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6B4A651DFD1B8E008E3DE1 /* LaunchScreen.storyboard */; };
+		DC6B4A6F1DFD1BA4008E3DE1 /* TableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B4A6E1DFD1BA4008E3DE1 /* TableViewHandler.swift */; };
+		DC6B4A721DFD282F008E3DE1 /* ThreeLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B4A701DFD282F008E3DE1 /* ThreeLabelTableViewCell.swift */; };
+		DC6B4A731DFD282F008E3DE1 /* ThreeLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6B4A711DFD282F008E3DE1 /* ThreeLabelTableViewCell.xib */; };
+		DCB7FA031DFEB2BB0073F18F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7FA021DFEB2BB0073F18F /* Utilities.swift */; };
+		DCB7FA051DFEB2E20073F18F /* Decorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7FA041DFEB2E20073F18F /* Decorators.swift */; };
+		DCB7FA071DFEB3250073F18F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7FA061DFEB3250073F18F /* Person.swift */; };
+		DCB7FA0B1DFEF3720073F18F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DCB7FA0A1DFEF3720073F18F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		DC6B4A631DFD1B8E008E3DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6B4A661DFD1B8E008E3DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC6B4A681DFD1B8E008E3DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6B4A6E1DFD1BA4008E3DE1 /* TableViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHandler.swift; sourceTree = "<group>"; };
+		DC6B4A701DFD282F008E3DE1 /* ThreeLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeLabelTableViewCell.swift; sourceTree = "<group>"; };
+		DC6B4A711DFD282F008E3DE1 /* ThreeLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeLabelTableViewCell.xib; sourceTree = "<group>"; };
+		DCB7FA021DFEB2BB0073F18F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		DCB7FA041DFEB2E20073F18F /* Decorators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decorators.swift; sourceTree = "<group>"; };
+		DCB7FA061DFEB3250073F18F /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DCB7FA0A1DFEF3720073F18F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,7 @@
 		DC6B4A501DFD1B8E008E3DE1 = {
 			isa = PBXGroup;
 			children = (
+				DCB7FA0A1DFEF3720073F18F /* .gitignore */,
 				DC6B4A5B1DFD1B8E008E3DE1 /* BasicTableViewDatasource */,
 				DC6B4A5A1DFD1B8E008E3DE1 /* Products */,
 			);
@@ -56,6 +71,12 @@
 			children = (
 				DC6B4A5C1DFD1B8E008E3DE1 /* AppDelegate.swift */,
 				DC6B4A5E1DFD1B8E008E3DE1 /* ViewController.swift */,
+				DCB7FA041DFEB2E20073F18F /* Decorators.swift */,
+				DC6B4A6E1DFD1BA4008E3DE1 /* TableViewHandler.swift */,
+				DC6B4A701DFD282F008E3DE1 /* ThreeLabelTableViewCell.swift */,
+				DCB7FA021DFEB2BB0073F18F /* Utilities.swift */,
+				DCB7FA061DFEB3250073F18F /* Person.swift */,
+				DC6B4A711DFD282F008E3DE1 /* ThreeLabelTableViewCell.xib */,
 				DC6B4A601DFD1B8E008E3DE1 /* Main.storyboard */,
 				DC6B4A631DFD1B8E008E3DE1 /* Assets.xcassets */,
 				DC6B4A651DFD1B8E008E3DE1 /* LaunchScreen.storyboard */,
@@ -124,7 +145,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB7FA0B1DFEF3720073F18F /* .gitignore in Resources */,
 				DC6B4A671DFD1B8E008E3DE1 /* LaunchScreen.storyboard in Resources */,
+				DC6B4A731DFD282F008E3DE1 /* ThreeLabelTableViewCell.xib in Resources */,
 				DC6B4A641DFD1B8E008E3DE1 /* Assets.xcassets in Resources */,
 				DC6B4A621DFD1B8E008E3DE1 /* Main.storyboard in Resources */,
 			);
@@ -137,8 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6B4A6F1DFD1BA4008E3DE1 /* TableViewHandler.swift in Sources */,
+				DC6B4A721DFD282F008E3DE1 /* ThreeLabelTableViewCell.swift in Sources */,
 				DC6B4A5F1DFD1B8E008E3DE1 /* ViewController.swift in Sources */,
+				DCB7FA031DFEB2BB0073F18F /* Utilities.swift in Sources */,
+				DCB7FA071DFEB3250073F18F /* Person.swift in Sources */,
 				DC6B4A5D1DFD1B8E008E3DE1 /* AppDelegate.swift in Sources */,
+				DCB7FA051DFEB2E20073F18F /* Decorators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +328,7 @@
 				DC6B4A6D1DFD1B8E008E3DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

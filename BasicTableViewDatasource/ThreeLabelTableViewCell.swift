@@ -1,5 +1,5 @@
 //
-//  HorizontalTableViewCell.swift
+//  ThreeLabelTableViewCell.swift
 //  BasicTableViewDatasource
 //
 //  Created by Vishal Singh on 12/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HorizontalTableViewCell: UITableViewCell {
+class ThreeLabelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var firstLabel: UILabel!
